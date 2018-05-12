@@ -2,8 +2,12 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :update, :edit, :destroy]
 
   def index
-    binding.pry
     @articles = Article.all
+    if params[:q].present?
+      @articles = @articles.select do |article|
+        article.tags.include? params[:q].downcase
+      end
+    end
   end
 
   def new
@@ -43,7 +47,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :tags)
+    params.require(:article).permit(:title, :text, )
   end
 
   def find_article
