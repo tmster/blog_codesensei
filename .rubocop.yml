@@ -29,3 +29,6 @@ Style/MultilineIfModifier:
 
 Metrics/LineLength:
   Max: 120
+
+Style/GuardClause:
+  Enabled: false
