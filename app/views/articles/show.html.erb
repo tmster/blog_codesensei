@@ -45,8 +45,9 @@
 <%= render 'comments/form' %>
 
 <h2>Comments</h2>
-
-<%= render @article.comments.reload %>
-
+<a href="#" id="toggle-comments">HIDE comments</a>
+<div id="comments">
+  <%= render @article.comments.reload %>
+</div>
 <%= link_to "Back", articles_path %>
 <%= link_to "Edit", edit_article_path(@article) %>
