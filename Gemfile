@@ -17,6 +17,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
 gem 'kaminari'
 gem 'pundit'
+gem 'carrierwave'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
