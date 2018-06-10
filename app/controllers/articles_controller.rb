@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:author).order(created_at: :desc).page(params[:page])
-
+    @top_commented_article = Article.top_commented.first
     @articles = @articles
                 .where('? = any(tags)',
                        params[:q].downcase) if params[:q].present?
