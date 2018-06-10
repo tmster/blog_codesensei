@@ -3,11 +3,9 @@ class ArticlesController < ApplicationController
   before_action :authorize_article, only: %i[edit update destroy]
 
   def index
-    @articles = Article.includes(:author).order(created_at: :desc).page(params[:page])
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.includes(:author).page(params[:page])
     @top_commented_article = Article.top_commented.first
-    @articles = @articles
-                .where('? = any(tags)',
-                       params[:q].downcase) if params[:q].present?
   end
 
   def new
