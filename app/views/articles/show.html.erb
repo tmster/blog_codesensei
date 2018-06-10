@@ -36,7 +36,7 @@
   <%= @article.updated_at %>
 </p>
 
-<%= pluralize(@article.likes_count, "person") %> liked this article
+<%= liked_message(@article) %>
 <%= link_to "Likes Summary", likes_summary_article_path(@article) %>
 <% if @like.persisted? %>
   <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
