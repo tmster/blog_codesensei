@@ -14,6 +14,10 @@
   <%= @article.author.email %>
 </p>
 <p>
+  <strong>Views count:</strong>
+  <%= @article.views_count %>
+</p>
+<p>
   <strong>Tags:</strong>
   <% @article.tags.each do |tag| %>
       <%= link_to articles_path(q: tag), style: 'margin-left: 4px' do %>

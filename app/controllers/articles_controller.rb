@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html do
+        @article.increment!(:views_count)
         render
       end
       format.json do
