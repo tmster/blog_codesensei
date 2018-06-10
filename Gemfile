@@ -19,6 +19,7 @@ gem 'kaminari'
 gem 'pundit'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
